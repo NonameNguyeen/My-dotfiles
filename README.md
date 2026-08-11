@@ -1,3 +1,4 @@
+
 # My-dotfiles
 
 <h2 align="center">📷SCREENSHOTS</h1>
@@ -14,9 +15,10 @@
 
 <img width="1919" height="1079" alt="Screenshot 2026-08-11 133326" src="https://github.com/user-attachments/assets/84a0c923-0d5c-43d8-a2c0-e2e812ce5551" />
 
+
 ### Powershell
 
-<img width="1919" height="1079" alt="Screenshot 2026-08-11 133431" src="https://github.com/user-attachments/assets/b13006ea-4f13-4168-bada-1f4f8a42a0dc" />
+[<img width="1919" height="1079" alt="Screenshot 2026-08-11 215838" src="https://github.com/user-attachments/assets/59e3ebaa-61d4-46a3-8ed9-1ea3e0c1e986" />](https://github.com/NonameNguyeen/My-dotfiles/tree/main/Terminal)
 
 ### Discord
 
