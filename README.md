@@ -12,5 +12,43 @@ SOME SCREENSHOTS
 
 
 
+##OTHER STUFFS##
+
+#BROWSER:
+
+
+[Zen Browser](https://zen-browser.app/)
+
+
+if wanna make zen looks better watch this [video](https://www.youtube.com/watch?v=fbeA0J_X35w&t=40s) or [this](https://www.youtube.com/watch?v=38YHr2Xrk4k&t=35s)  
+
+[Brave Browser](https://brave.com/)
+
+[make brave looks better](https://www.youtube.com/watch?v=tSfDZiK3eHk)
+
+
+#MUSIC PLAYER
+
+SPOTIFY with [SPICETIFY](https://www.youtube.com/watch?v=BIhVmIMgzzU)
+
+
+#APP LAUNCHER
+
+[Flow Launcher](https://www.flowlauncher.com/)
+
+
+#TEXT EDITOR
+
+
+[VS Code](https://code.visualstudio.com/)
+
+
+##EXTRA##
+
+
+
+#Colorscheme: [Catppuccin Mocha](https://catppuccin.com/)
+
+#Fonts : [JetBrains Mono Nerd Fonts](https://www.jetbrains.com/lp/mono/)
 
  I'm 14 years old btw XD
