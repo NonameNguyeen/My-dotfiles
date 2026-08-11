@@ -20,6 +20,10 @@
 
 [<img width="1919" height="1079" alt="Screenshot 2026-08-11 215838" src="https://github.com/user-attachments/assets/59e3ebaa-61d4-46a3-8ed9-1ea3e0c1e986" />](https://github.com/NonameNguyeen/My-dotfiles/tree/main/Terminal)
 
+### Cava (Catppuccin Mocha theme)
+
+[<img width="1919" height="1079" alt="Screenshot 2026-08-11 220758" src="https://github.com/user-attachments/assets/248e9ac4-d007-41cf-b509-4d44b0a0808d" />](https://github.com/NonameNguyeen/My-dotfiles/tree/main/Cava)
+
 ### Discord
 
 <img width="1919" height="1079" alt="Screenshot 2026-08-11 134546" src="https://github.com/user-attachments/assets/11c74ac1-69bc-4b32-82cf-e83d8c1e4ec4" />
