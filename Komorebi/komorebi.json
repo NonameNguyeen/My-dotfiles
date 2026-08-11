@@ -1,0 +1,80 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 6,
+  "default_container_padding": 2,
+  "border": true,
+  "border-implementation": "Native",
+  "boarder_style": "System",
+  "border_width": 3,
+  "border_offset": 0,
+  "boarder_colors": {
+    "single": "#89b4fa",
+    "stack": "#89b4fa",
+    "floating": "#89b4fa",
+    "monocle": "#89b4fa",
+    "unfocused": "#89b4fa"
+  },
+  "mouse_follows_focus": false,
+  "transparency": true,
+  "transparency_alpha": 250,
+  "animation": {
+    "enabled":true,
+    "duration":300,
+    "fps": 300,
+    "style":{
+      "movement":"EaseOutBack",
+      "transparency":"Linear"
+    } 
+  },
+  "theme": {
+    "palette": "Catppuccin",
+    "name": "Mocha",
+    "accent": "Mocha"
+  },
+  "stackbar": {
+    "height": 24,
+    "mode": "Never",
+    "label": "Title",
+    "tabs": {
+      "width": 200,
+      "font_size": 16
+    }
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "III",
+          "layout": "HorizontalStack"
+        },
+        {
+          "name": "IV",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "V",
+          "layout": "Rows"
+        },
+        {
+          "name": "VI",
+          "layout": "Grid"
+        },
+        {
+          "name": "VII",
+          "layout": "RightMainVerticalStack"
+        }
+      ]
+    }
+  ]
+}
