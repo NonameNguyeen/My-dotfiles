@@ -7,7 +7,7 @@
 ### YASB
 
 
-]<img width="1919" height="55" alt="Screenshot 2026-08-11 201126" src="https://github.com/user-attachments/assets/a4055307-0cee-405a-8784-4b0f9dd957e8" />](https://github.com/NonameNguyeen/My-dotfiles/tree/main/YASB) 
+[<img width="1919" height="55" alt="Screenshot 2026-08-11 201126" src="https://github.com/user-attachments/assets/a4055307-0cee-405a-8784-4b0f9dd957e8" />](https://github.com/NonameNguyeen/My-dotfiles/tree/main/YASB) 
 
 ### Destop
 
