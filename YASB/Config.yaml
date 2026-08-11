@@ -1,0 +1,669 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+update_check: true
+bars:
+  status-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      align: "center"
+    animation:
+      enabled: true
+      duration: 1000
+    blur_effect:
+      enabled: true
+      round_corners: true
+      dark_mode: true
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 40
+    layouts:
+      center:
+        alignment: "center"
+        stretch: false
+    padding:
+      top: 7
+      left: 15
+      bottom: 5
+      right: 15
+    widgets:
+      left:
+        [
+          "home",
+          "komorebi_active_layout",
+          "komorebi_workspaces",
+          
+
+         
+          
+          
+          "active_window",
+          "cava"
+        ]
+      center: ["media","clock"]
+      right:
+        [
+          "cpu",
+          "memory",
+          "volume",
+          "weather",
+        
+          "wallpapers",       
+          
+          "power_menu"
+        ]
+widgets:
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      blur: true
+      round_corners: true
+      label: "<span>\uf004</span>"
+      menu_list:
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf015; </span>Home", path: "~" }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf108; </span>Desktop", command: "explorer", args: [ "%USERPROFILE%\\OneDrive\\Desktop" ], shell: true }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf019; </span>Downloads", command: "explorer", args: [ "%USERPROFILE%\\Downloads" ], shell: true }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf07c; </span>Documents", command: "explorer", args: [ "%USERPROFILE%\\OneDrive\\Documents" ], shell: true }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf03e; </span>Pictures", command: "explorer", args: [ "%USERPROFILE%\\OneDrive\\Pictures" ], shell: true }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf03d; </span>Videos", command: "explorer", args: [ "%USERPROFILE%\\OneDrive\\Videos" ], shell: true }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf001; </span>Music", command: "explorer", args: [ "%USERPROFILE%\\OneDrive\\Music" ], shell: true }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf023; </span>AppData", command: "explorer", args: [ "%APPDATA%" ], shell: true }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf1f8; </span>Recycle Bin", command: "explorer", args: [ "shell:RecycleBinFolder" ], shell: true }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf013; </span>Settings", command: "start", args: [ "ms-settings:" ], shell: true }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf0ad; </span>Control Panel", command: "control", args: [ "" ], shell: true }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf437; </span>Task Manager", command: "taskmgr", args: [ "" ], shell: true }
+        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf05a; </span>About", command: "winver", args: [ "" ], shell: true }
+      system_menu: false
+      power_menu: false
+      alignment: "left"
+      direction: "down"
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "<span>\uf017</span>{%a. %B %d, %H:%M %p}"
+      tooltip: false
+      timezones: []
+      calendar:
+        blur: true
+        round_corners: true
+        alignment: "left"
+        direction: "down"
+        show_week_numbers: true
+      callbacks:
+        on_left: "toggle_calendar"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+  
+  glazewm_workspaces:
+    type: "glazewm.workspaces.GlazewmWorkspacesWidget"
+    options:
+      offline_label: "GlazeWM"
+      hide_if_offline: false
+      enable_scroll_switching: true
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[app_name]}"
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 16
+      max_length: 56
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "\uf001  {title}  \uee83"
+      label_alt: "\uf001  {artist} {s} {title}  \uee83"
+      separator: "-"
+      hide_empty: true
+      controls_hide: true
+      show_thumbnail: true
+      thumbnail_alpha: 100
+      thumbnail_padding: 0
+      max_field_size:
+        label: 48
+        label_alt: 48
+      scrolling_label:
+        enabled: true
+        update_interval_ms: 60
+        style: "left"
+        separator: "      "
+        always_scroll: false
+      media_menu:
+        blur: true
+        round_corners: true
+        alignment: "center"
+        direction: "down"
+        thumbnail_corner_radius: 4
+        thumbnail_size: 180
+        max_title_size: 100
+        max_artist_size: 100
+        show_source: true
+      media_menu_icons:
+        play: "\uf04b"
+        pause: "\uf04c"
+        prev_track: "\uf048"
+        next_track: "\uf051"
+      progress_bar:
+        enabled: true
+        alignment: bottom
+      callbacks:
+        on_left: "toggle_media_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+  cpu:
+      type: "yasb.cpu.CpuWidget"
+      options:
+        label: "{info[percent][total]:.0f}%"
+        progress_bar:
+          enabled: true
+          position: "left"
+          size: 17
+          thickness: 3
+          color: "#89dceb"
+          background_color: "#1e1e2e"
+          animation: true 
+        animation:
+          enabled: true
+          type: FadeInOut
+          duration: 200
+        update_interval: 2000
+        callbacks:
+          on_right: "toggle_menu"
+          on_left: "toggle_menu"
+        menu:
+          enabled: true
+          show_graph: true
+          show_graph_grid: true
+          graph_history_size: 60
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "{virtual_mem_percent}%"
+      update_interval: 5000
+      progress_bar:
+        enabled: true
+        size: 17
+        thickness: 3
+        position: left
+        color: "#cba6f7"
+        background_color: "#1e1e2e"
+        animation: True
+      animation:
+        enabled: true
+        type: FadeInOut
+        duration: 200 
+      callbacks:
+        on_left: "toggle_menu"
+        on_right: "toggle_menu"
+      memory_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      menu:
+        enabled: true
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "\u23fc Offline"
+      label_workspace_btn: "\u000d"
+      label_workspace_active_btn: "\u000d"
+      label_workspace_populated_btn: "\u000d"
+      label_default_name: "{index}"
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: true
+      animation: true"
+  gpu:
+    type: "yasb.gpu.GpuWidget"
+    options:
+      label: "<span>\uf2db</span>GPU: {info[utilization]}%"
+      label_alt: "<span>\uf2db</span> {info[utilization]}%"
+      update_interval: 15000
+      hide_decimal: true
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+  glazewm_tiling_direction:
+    type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
+    options:
+      horizontal_label: "\udb81\udce1"
+      vertical_label: "\udb81\udce2"
+  glazewm_binding_mode:
+    type: "glazewm.binding_mode.GlazewmBindingModeWidget"
+    options:
+      label: "<span>{icon}</span>"
+      hide_if_no_active: false
+      default_icon: "\uf005"
+      icons:
+        none: "\uf005"
+        resize: "\uf065"
+        pause: "\uf468"
+      binding_modes_to_cycle_through: ["none", "resize", "pause"]
+      callbacks:
+        on_left: "next_binding_mode"
+        on_middle: "do_nothing"
+        on_right: "disable_binding_mode"
+  quick_launch:
+    type: "yasb.quick_launch.QuickLaunchWidget"
+    options:
+      label: "<span>\uf002</span>"
+      search_placeholder: "Search"
+      max_results: 25
+      show_icons: true
+      icon_size: 24
+      providers:
+        apps:
+          enabled: true
+          prefix: "*"
+          show_recent: true
+          max_recent: 5
+          show_description: false
+        bookmarks:
+          enabled: true
+          prefix: "*"
+          browser: "edge"
+          profile: "default"
+        calculator:
+          enabled: true
+          prefix: "="
+        clipboard_history:
+          enabled: true
+          prefix: "#"
+        web_search:
+          enabled: true
+          prefix: "?"
+          engine: "bing"
+          remove_engines:
+            - "brave"
+            - "duckduckgo"
+            - "wikipedia"
+            - "reddit"
+            - "stackoverflow"
+            - "x"
+        settings:
+          enabled: true
+          prefix: "!"
+        file_search:
+          enabled: true
+          prefix: "/"
+          backend: "index"
+          show_path: true
+        emoji:
+          enabled: true
+          prefix: ";"
+        color:
+          enabled: true
+          prefix: ":"
+        snippets:
+          enabled: false
+      popup:
+        width: 720
+        height: 480
+        blur: true
+        round_corners: true
+      callbacks:
+        on_left: "toggle_quick_launch"
+      keybindings:
+        - keys: "alt+enter"
+          action: "toggle_quick_launch"
+  
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>{icon}</span>"
+      hide_empty: false
+      tooltip: false
+      icons:
+        new: "\uf0f3"
+        default: "\uf0a2"
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "do_nothing"
+        on_middle: "do_nothing"
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 200
+      button_row: 5
+      buttons:
+        shutdown: ["\uf011", "Rage Quit"]
+        restart: ["\uead2", "Oops, Reboot"]
+        signout: ["\udb80\udf43", "Dip Out"]
+        hibernate: ["\uf28e", "Bear Mode"]
+        sleep: ["\u23fe", "Nap Time"]
+        cancel: ["", "Nah, Im Good "]
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\ueee8"  # Icon for muted
+        - "\uf026"  # Icon for 0-10% volume
+        - "\uf027"  # Icon for 11-30% volume
+        - "\uf027"  # Icon for 31-60% volume
+        - "\uf028"  # Icon for 61-100% volume
+      audio_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "toggle_mute" 
+  cava:
+    type: "yasb.cava.CavaWidget"
+    options:
+      bar_height: 12
+      min_bar_height: 0
+      gradient: 1
+      foreground: "#89b4fa"
+      gradient_color_1: '#74c7ec'
+      gradient_color_2: '#89b4fa'
+      gradient_color_3: '#cba6f7'
+      bars_number: 8
+      bar_spacing: 2
+      bar_width: 4
+      bar_type: "bars"
+      framerate: 60
+      hide_empty: true       
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: "3bf4cf9a7c3f40d6b31174128242807" # Get your free API key from https://www.weatherapi.com/
+      show_alerts: true
+      tooltip: true
+      update_interval: 600 # Update interval in seconds, Min 600 seconds
+      hide_decimal: true
+      units: "metric" # Can be 'metric' or 'imperial'
+      location:  # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      callbacks:
+        on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      icons:
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
+        cloudyDay: "\ue312"
+        cloudyNight: "\ue311"
+        rainyDay: "\ue308"
+        rainyNight: "\ue333"
+        snowyDay: "\ue30a"
+        snowyNight: "\ue335"
+        blizzardDay: "\udb83\udf36"
+        blizzardNight: "\udb83\udf36"
+        foggyDay: "\ue303"
+        foggyNight: "\ue346"
+        thunderstormDay: "\ue30f"
+        thunderstormNight: "\ue338"
+        default: "\uebaa"
+      weather_card:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        icon_size: 64
+        show_hourly_forecast: true # Set to False to disable hourly forecast
+        time_format: "24h" # can be 12h or 24h
+        hourly_point_spacing: 76
+        hourly_icon_size: 32 # better to set 16, 32 or 64 for better quality
+        icon_smoothing: true # should be true for smoother icon or false for sharper icon if using 16, 32 or 64 for hourly_icon_size
+        temp_line_width: 2 # can be 0 to hide the temperature line
+        current_line_color: "#8EAEE8"
+        current_line_width: 1 # can be 0 to hide the current hour line
+        current_line_style: "dot"
+        hourly_gradient:
+          enabled: false
+          top_color: "#8EAEE8"
+          bottom_color: "#2A3E68"
+        hourly_forecast_buttons: # Optional hourly forecast data type toggle buttons, default disabled
+          enabled: true # Set to false to hide the buttons
+          default_view: "temperature" # Default view when opening the weather card. Options: "temperature", "rain", "snow"
+          temperature_icon: "\udb81\udd99"
+          rain_icon: "\udb81\udd96"
+          snow_icon: "\udb81\udd98"
+        weather_animation:
+          enabled: false
+          snow_overrides_rain: true
+          temp_line_animation_style: both # can be "rain", "snow", "both", or "none"
+          rain_effect_intensity: 1.0 # 0.01 - 10.0
+          snow_effect_intensity: 1.0 # 0.01 - 10.0
+          scale_with_chance: true
+  
+    enable_debug: false     
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>\udb80\udd1b</span>"
+      image_path:
+       - "C:\\Wallpapers" # Replace this by your address wallpaper folder
+      change_automatically: false # Automatically change wallpaper
+      update_interval: 60 # If change_automatically is true, update interval in seconds
+      keybindings:
+      - keys: "alt+w"
+        action: "toggle_gallery"
+      engine:
+        enabled: true
+        animation: "circle" # circle/slide_top/diamond/split
+      gallery:
+          enabled: true
+          blur: true
+          image_width: 220
+          image_per_page: 6
+          show_buttons: false
+          orientation: "portrait"
+          image_spacing: 8
+          
+          lazy_load: true
+          lazy_load_fadein: 400
+          image_corner_radius: 1
+          enable_cache: false"
+      callbacks:
+        on_left: "toggle_gallery"
+        on_middle: "do_nothing"
+        on_right: "change_wallpaper"
+  quick_launch:
+    type: "yasb.quick_launch.QuickLaunchWidget"
+    options:
+      label: "<span>\uf002</span>"
+      search_placeholder: "Search applications..."
+      max_results: 50
+      show_icons: true
+      icon_size: 32
+      providers:
+        apps:
+          enabled: true
+          prefix: "*"
+          priority: 0
+          show_recent: true
+          max_recent: 5
+          show_description: true
+        bookmarks:
+          enabled: true
+          prefix: "*"
+          priority: 1
+          browser: "all"
+          profile: "Default"
+        calculator:
+          enabled: true
+          prefix: "="
+          priority: 2
+        clipboard_history:
+          enabled: true
+          prefix: "cb"
+          priority: 3
+          max_items: 30
+        color:
+          enabled: true
+          prefix: "c:"
+          priority: 4
+        currency:
+          enabled: true
+          prefix: "$"
+          priority: 5
+        dev_tools:
+          enabled: true
+          prefix: "dev"
+          priority: 6
+        emoji:
+          enabled: true
+          prefix: ":"
+          priority: 7
+        file_search:
+          enabled: true
+          prefix: "/"
+          priority: 8
+          backend: "auto"
+          show_path: true
+        github_notifications:
+          enabled: true
+          prefix: "gh"
+          priority: 9
+          token: "env"
+        hacker_news:
+          enabled: true
+          prefix: "hn"
+          priority: 10
+          cache_ttl: 300
+          max_items: 30
+        ip_info:
+          enabled: true
+          prefix: "ip"
+          priority: 11
+        kill_process:
+          enabled: true
+          prefix: "!"
+          priority: 12
+        port_viewer:
+          enabled: true
+          prefix: "pv"
+          priority: 13
+          tcp_listening_only: true
+          include_established: false
+        settings:
+          enabled: true
+          prefix: "@"
+          priority: 14
+        snippets:
+          enabled: true
+          prefix: ";"
+          priority: 15
+          type_delay: 200
+        system_commands:
+          enabled: true
+          prefix: ">"
+          priority: 16
+        unit_converter:
+          enabled: true
+          prefix: "~"
+          priority: 17
+        vscode:
+          enabled: true
+          prefix: "vsc"
+          priority: 18
+        web_search:
+          enabled: true
+          prefix: "?"
+          priority: 19
+          engine: "google"
+        window_switcher:
+          enabled: true
+          prefix: "win"
+          priority: 20
+        windows_terminal:
+          enabled: true
+          prefix: "wt"
+          priority: 21
+        world_clock:
+          enabled: true
+          prefix: "tz"
+          priority: 22
+        wsl:
+          enabled: true
+          prefix: "wsl"
+          priority: 23
+          show_online: true
+      popup:
+        width: 720
+        height: 480
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        dark_mode: true
+      callbacks:
+        on_left: "toggle_quick_launch"
+      keybindings:
+        - keys: "alt+space"
+          action: "toggle_quick_launch"
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "\u23fc Offline"
+      label_workspace_btn: "\u000d"
+      label_workspace_active_btn: "\u000d"
+      label_workspace_populated_btn: "\u000d"
+      label_default_name: "{index}"
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: true
+      animation: true
+  komorebi_active_layout:
+    type: "komorebi.active_layout.ActiveLayoutWidget"
+    options:
+      hide_if_offline: false
+      label: "{icon}"
+      layouts:
+        [
+          "bsp",
+          "columns",
+          "rows",
+          "grid",
+          "vertical_stack",
+          "horizontal_stack",
+          "ultrawide_vertical_stack",
+          "right_main_vertical_stack",
+        ]
+      layout_icons:
+        bsp: "BSP"
+        columns: "COLS"
+        rows: "ROWS"
+        grid: "GRID"
+        vertical_stack: "V-STACK"
+        horizontal_stack: "H-STACK"
+        ultrawide_vertical_stack: "W-STACK"
+        right_main_vertical_stack: "RMV-STACK"
+        monocle: "MONOCLE"
+        maximized: "MAX"
+        floating: "FLOATING"
+        paused: "PAUSED"
+      callbacks:
+        on_left: "next_layout"
+        on_middle: "toggle_monocle"
+        on_right: "prev_layout"          
