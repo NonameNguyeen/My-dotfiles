@@ -10,7 +10,7 @@ SOME SCREENSHOTS
 
 <img width="1919" height="1079" alt="Screenshot 2026-08-11 134546" src="https://github.com/user-attachments/assets/11c74ac1-69bc-4b32-82cf-e83d8c1e4ec4" />
 
-
+wanna see my rices join [this discord](https://discord.gg/1388093659504967681)
 
 
  I'm 14 years old btw XD
