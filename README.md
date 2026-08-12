@@ -1,6 +1,6 @@
 
-# My-dotfiles
-
+<p><strong><h3>this is my window 11 dotfiles and softwware i use </strong></p>
+<p><strong><h3>feel free to use what u like : ) </strong></p>
 <h2 align="center">📷SCREENSHOTS</h1>
 
 
