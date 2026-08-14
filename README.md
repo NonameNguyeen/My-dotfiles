@@ -28,4 +28,5 @@
 
 [<img width="1919" height="1079" alt="Screenshot 2026-08-11 134546" src="https://github.com/user-attachments/assets/11c74ac1-69bc-4b32-82cf-e83d8c1e4ec4" />](https://github.com/NonameNguyeen/My-dotfiles/tree/main/Discord)
 
-
+### Spotify
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/31c43b2c-0e80-418a-b346-a24707292dcc" />
