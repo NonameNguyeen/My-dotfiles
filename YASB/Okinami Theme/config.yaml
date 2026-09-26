@@ -277,7 +277,7 @@ widgets:
     options:
       label: "<span>\udb80\udd1b</span>"
       image_path:
-       - "D:/OneDrive/ALLWALLPAPERS/WALLPAPERS" # Replace this by your address wallpaper folder
+       - "" # Replace this by your address wallpaper folder
       change_automatically: false # Automatically change wallpaper
       update_interval: 60 # If change_automatically is true, update interval in seconds
       keybindings:
@@ -288,12 +288,12 @@ widgets:
         animation: "slide_top" # circle/slide_top/diamond/split
       gallery:
           enabled: true
-          blur: true
-          image_width: 220
-          image_per_page: 6
+          blur: false
+          image_width: 550
+          image_per_page: 5
           type: "magnified"  # default/magnified/strip/slide - see "Gallery types" below
           show_buttons: false
-          orientation: "portrait" # landscape/portrait
+          orientation: "landscape" # landscape/portrait
           image_spacing: 8
           
           lazy_load: true
@@ -577,4 +577,4 @@ widgets:
       dots:
         count: 30
         size: 1
-        gap: 2s
+        gap: 2
