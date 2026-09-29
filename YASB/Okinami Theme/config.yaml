@@ -145,7 +145,7 @@ widgets:
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
-      label: "\uf011"
+      label: "<span>\uf1b0</span>"
       uptime: True
       blur: False
       blur_background: True
@@ -277,7 +277,7 @@ widgets:
     options:
       label: "<span>\udb80\udd1b</span>"
       image_path:
-       - "" # Replace this by your address wallpaper folder
+       - "D:/OneDrive/ALLWALLPAPERS/WALLPAPERS" # Replace this by your address wallpaper folder
       change_automatically: false # Automatically change wallpaper
       update_interval: 60 # If change_automatically is true, update interval in seconds
       keybindings:
@@ -472,7 +472,7 @@ widgets:
   control_center:
     type: "yasb.control_center.ControlCenterWidget"
     options:
-      label: "<span>\ueaf8</span>"
+      label: "<span>\udb84\udc46</span>"
       tooltip: true
       sections_order:
         - "system_controls"
@@ -485,7 +485,7 @@ widgets:
         direction: "down"
         border_color: none
         round_corners: false
-        blur: false
+        blur: true
         round_corners_type: normal
         offset_top: 9
         offset_left: 5
