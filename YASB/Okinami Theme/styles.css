@@ -16,7 +16,7 @@
     --fontSizeLarge: 16px;
     --fontWeight: 600;
 
-    /*colors*/
+    /* colors */
 
     /* Catppuccin Latte */
     /* --background: #eff1f5;
@@ -619,7 +619,7 @@
 	margin-bottom: 10px;
 	color: rgba(191, 202, 219, 0.726);
 	font-weight: 600;
-	font-family: "JetBrainsMono NFP";
+	font-family: var(--icons-font);
 }
 .power-menu-widget .label {
 	color: #eba0ac;
@@ -631,7 +631,7 @@
 	height: 240px;
 	border-radius: 4px;
 	background-color: rgba(41, 42, 58, 0.75);
-	font-family: "JetBrainsMono NFP";
+	font-family: var(--icons-font);
 	color: white;
 	border: 4px solid rgba(255, 255, 255, 0);
  
@@ -645,9 +645,10 @@
 	font-size: 16px;
 	font-weight: 600;
 	color: rgba(255, 255, 255, 0.6);
-	font-family: "JetBrainsMono NFP";
+	font-family: var(--icons-font);
 }
 .power-menu-popup .button .icon {
+	font-family: var(--icons-font);
 	font-size: 70px;
 	padding-top: 54px;
 	color: rgba(255, 255, 255, 0.25);
@@ -660,6 +661,7 @@
 }
 
 .power-menu-popup .button.cancel .icon {
+    font-family: var(--icons-font);
     font-size: 24px !important; /* Smaller icon for the thinner button */
     padding-top: 0px !important; /* Remove the large top padding */
     color: rgba(243, 139, 168, 0.55);
@@ -668,6 +670,13 @@
 .power-menu-popup .button.cancel .label {
     margin-bottom: 0px !important; /* Remove bottom margin */
     color: rgba(243, 139, 168, 0.95);
+}
+.power-menu-widget .icon {
+	font-family: var(--icons-font);
+	font-size: 16px;
+	color: #eba0ac;
+	padding-bottom: 1px;
+	padding-right: 2px;
 }
 .audio-menu {
     background-color: var(--background); 
@@ -1792,4 +1801,3 @@ which is 16 pixels same as the other sections. */
 	color: #cba6f7;
     font-size: 14px;
 }
-
